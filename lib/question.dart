@@ -4,6 +4,7 @@ class Question extends StatelessWidget {
   final String questionText;
 
   Question(this.questionText);
+  // Muestra el texto de la pretuntra
 
   @override
   Widget build(BuildContext context) {

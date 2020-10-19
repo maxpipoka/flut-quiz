@@ -16,54 +16,30 @@ class _MyAppState extends State<MyApp> {
   final _questions = const [
     // Variable con las preguntas y respuestas
     {
-      'questionText': 'Q1. Who created Flutter?',
+      'questionText': 'Q1. Todos sabemos que te estaría entrando...?',
       'answers': [
-        {'text': 'Facebook', 'score': -2},
-        {'text': 'Adobe', 'score': -2},
-        {'text': 'Google', 'score': 10},
-        {'text': 'Microsoft', 'score': -2},
+        {'text': 'Mas plata', 'score': -2},
+        {'text': 'Una llamada', 'score': -2},
+        {'text': 'Agua', 'score': 10},
+        {'text': 'Un jean viejo', 'score': -2},
       ],
     },
     {
-      'questionText': 'Q2. What is Flutter?',
+      'questionText': 'Q2. Tu jermu está re amorosa y no rompe las bolas?',
       'answers': [
-        {'text': 'Android Development Kit', 'score': -2},
-        {'text': 'IOS Development Kit', 'score': -2},
-        {'text': 'Web Development Kit', 'score': -2},
-        {
-          'text':
-              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
-          'score': 10
-        },
+        {'text': 'Habrá cambiado el caracter', 'score': -2},
+        {'text': 'Se dió cuenta que me molesta', 'score': -2},
+        {'text': 'Le hizo caso a tu mamá', 'score': -2},
+        {'text': 'Te esta gorreando, clavadísimo', 'score': 10},
       ],
     },
     {
-      'questionText': ' Q3. Which programing language is used by Flutter',
+      'questionText': ' Q3. La bruja empezó a ir al gim, y dice que el profe es re macanudo',
       'answers': [
-        {'text': 'Ruby', 'score': -2},
-        {'text': 'Dart', 'score': 10},
-        {'text': 'C++', 'score': -2},
-        {'text': 'Kotlin', 'score': -2},
-      ],
-    },
-    {
-      'questionText': 'Q4. Who created Dart programing language?',
-      'answers': [
-        {'text': 'Lars Bak and Kasper Lund', 'score': 10},
-        {'text': 'Brendan Eich', 'score': -2},
-        {'text': 'Bjarne Stroustrup', 'score': -2},
-        {'text': 'Jeremy Ashkenas', 'score': -2},
-      ],
-    },
-    {
-      'questionText':
-          'Q5. Is Flutter for Web and Desktop available in stable version?',
-      'answers': [
-        {
-          'text': 'Yes',
-          'score': -2,
-        },
-        {'text': 'No', 'score': 10},
+        {'text': 'Profe copado, pasa nada', 'score': -2},
+        {'text': 'Chiquiplish Chiquiplish', 'score': 10},
+        {'text': 'Menos mal que hace algo', 'score': -2},
+        {'text': 'Debe ser gay el profe', 'score': -2},
       ],
     },
   ];
@@ -88,9 +64,9 @@ class _MyAppState extends State<MyApp> {
     });
     print(_questionIndex);
     if (_questionIndex < _questions.length) {
-      print('We have more questions!');
+      print('Una más!');
     } else {
-      print('No more questions!');
+      print('No mas preguntas Sr Juez!');
     }
   }
 
@@ -99,13 +75,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            title: Center(child: Text('Geeks for Geeks')),
-            backgroundColor: Colors.blueAccent //Color(0xFF00E676),
-            ),
+            //Barra superior
+            title: Center(child: Text('Quiz APP')), // Titulo de la app
+            backgroundColor: Colors.blueAccent),
         body: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: _questionIndex < _questions.length
+          padding: const EdgeInsets.all(30.0), // Espacio despues de la barra superior
+          child: _questionIndex < _questions.length // Si numero pregunta es menor cantidad preguntas
               ? Quiz(
+                  // Pintado de las preguntas
                   answerQuestion: _answerQuestion,
                   questionIndex: _questionIndex,
                   questions: _questions,
